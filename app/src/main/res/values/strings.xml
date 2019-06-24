@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Git Mobile</string>
+    <string name="title_activity_add_repository">AddRepositoryActivity</string>
+    <string name="repository_name">Repository name</string>
+    <string name="maintainers_nickname">Maintainer\'s nickname</string>
+    <string name="favourite_icon">Favourite icon</string>
+    <string name="favourite">Favourite</string>
+    <string name="complete">Complete</string>
+    <string name="remote_url">Remote URL</string>
+    <string name="nickname">Nickname</string>
+    <string-array name="actions_array">
+        <item>Clone repository</item>
+        <item>Init repository</item>
+    </string-array>
+    <string name="set_credentials">Set credentials</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="title_activity_repository">RepositoryActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="up_to_date">Up to date</string>
+    <string name="file_icon">File icon</string>
+    <string name="filename">Filename</string>
+    <string name="description">Description</string>
+</resources>

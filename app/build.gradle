@@ -1,0 +1,105 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.commityourself.gitmobile"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        pickFirst 'META-INF/kotlinx-io.kotlin_module'
+        pickFirst 'META-INF/atomicfu.kotlin_module'
+        pickFirst 'META-INF/kotlinx-coroutines-io.kotlin_module'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0-beta01'
+    implementation 'androidx.core:core-ktx:1.2.0-alpha02'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13-beta-3'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Design
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta1'
+    implementation 'com.google.android.material:material:1.1.0-alpha07'
+    implementation 'com.pkmmte.view:circularimageview:1.1'
+
+    // Settings
+    implementation 'androidx.preference:preference:1.1.0-beta01'
+
+    // Dagger 2
+    implementation 'com.google.dagger:dagger:2.23.1'
+    implementation 'com.google.dagger:dagger-android-support:2.23.1'
+    kapt 'com.google.dagger:dagger-compiler:2.23.1'
+    kapt 'com.google.dagger:dagger-android-processor:2.23.1'
+
+    // Room components
+    implementation "androidx.room:room-runtime:2.1.0"
+    implementation "androidx.room:room-ktx:2.1.0"
+    kapt "androidx.room:room-compiler:2.1.0"
+    androidTestImplementation "androidx.room:room-testing:2.1.0"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0-alpha01"
+    kapt "androidx.lifecycle:lifecycle-compiler:2.2.0-alpha01"
+    androidTestImplementation 'androidx.arch.core:core-testing:2.1.0-beta01'
+
+    // Lifecycle components Kotlin support
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha01"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha01'
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0-alpha01"
+
+    // Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.0"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.0"
+
+    // Markdown
+    implementation "ru.noties.markwon:core:3.0.2"
+    implementation "ru.noties.markwon:html:3.0.2"
+    implementation "ru.noties.markwon:recycler:3.0.2"
+    implementation "ru.noties.markwon:ext-tables:3.0.2"
+    implementation "ru.noties.markwon:ext-tasklist:3.0.2"
+    implementation "ru.noties.markwon:ext-strikethrough:3.0.2"
+    implementation "ru.noties.markwon:syntax-highlight:3.0.2"
+
+    // JGit
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:3.7.1.201504261725-r'
+
+    // Misc
+    implementation group: 'joda-time', name: 'joda-time', version: '2.3'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'com.jcraft:jsch:0.1.55'
+    implementation 'commons-io:commons-io:20030203.000550'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    implementation 'com.scottyab:secure-preferences-lib:0.1.7'
+    implementation 'ch.acra:acra:4.9.2'
+    implementation 'org.conscrypt:conscrypt-android:2.1.0'
+    debugImplementation 'com.facebook.stetho:stetho:1.5.1'
+    debugImplementation 'com.facebook.stetho:stetho-timber:1.5.1'
+    testImplementation 'org.robolectric:robolectric:4.3'
+    testImplementation 'org.robolectric:shadows-support-v4:3.4-rc2'
+}

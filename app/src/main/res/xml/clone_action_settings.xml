@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="local_path"
+        android:title="Local path"
+        android:icon="@drawable/ic_folder"/>
+
+    <SwitchPreference
+        android:key="recursive"
+        android:title="Clone recursively"
+        android:icon="@drawable/ic_recursive"/>
+
+    <SwitchPreference
+            android:key="encrypted"
+            android:title="Encrypted"
+            android:icon="@drawable/ic_lock"/>
+
+</PreferenceScreen>
