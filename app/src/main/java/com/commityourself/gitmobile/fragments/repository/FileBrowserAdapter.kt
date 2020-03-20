@@ -18,11 +18,18 @@ class FileBrowserAdapter internal constructor(val context: Context?) :
     private var file = root
     private var filesList = file.listFiles()
         set(value) {
+            if (file != root)
+                value.plusElement(File(file.parent))
             field = value.apply {
                 sortBy { it.name }
                 sortByDescending { it.isDirectory }
             }
         }
+    var listener: Listener? = null
+
+    interface Listener {
+        fun onChangeDirectory(newPath: String)
+    }
 
     inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val fileIcon: ImageView = view.findViewById(R.id.file_icon)
@@ -52,6 +59,7 @@ class FileBrowserAdapter internal constructor(val context: Context?) :
             if (filesList[position].isDirectory) {
                 this.file = filesList[position]
                 filesList = this.file.listFiles()
+                listener?.onChangeDirectory(file.canonicalPath.drop((root.canonicalPath).length))
                 notifyDataSetChanged()
             }
         }
@@ -65,6 +73,7 @@ class FileBrowserAdapter internal constructor(val context: Context?) :
         this.root = root
         file = root
         filesList = file.listFiles()
+        listener?.onChangeDirectory("/")
         notifyDataSetChanged()
     }
 }

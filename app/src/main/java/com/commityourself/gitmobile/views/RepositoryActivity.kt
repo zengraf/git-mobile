@@ -2,6 +2,7 @@ package com.commityourself.gitmobile.views
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -12,6 +13,7 @@ import com.commityourself.gitmobile.component
 import com.commityourself.gitmobile.fragments.repository.FileBrowserFragment
 import com.commityourself.gitmobile.fragments.repository.ReadmeFragment
 import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_add_repository.*
 
 class RepositoryActivity : AppCompatActivity() {
     var id: Int = -1
@@ -42,6 +44,8 @@ class RepositoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_repository)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         id = savedInstanceState?.getInt(EXTRA_ID) ?: intent.getIntExtra(EXTRA_ID, -1)
 
         pager = findViewById(R.id.repository_pager)

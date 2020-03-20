@@ -41,7 +41,7 @@ class RepositoryListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         adapter = RepositoryAdapter(context)
-        recyclerView = (inflater.inflate(R.layout.repository_list_fragment, container, false) as RecyclerView).apply {
+        recyclerView = (inflater.inflate(R.layout.fragment_repository_list, container, false) as RecyclerView).apply {
             adapter = this@RepositoryListFragment.adapter
             layoutManager = LinearLayoutManager(context)
         }

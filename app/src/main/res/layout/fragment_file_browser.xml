@@ -9,11 +9,22 @@
     <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/relative_path"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textSize="16sp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"/>
+            android:paddingEnd="16dp"
+            android:ellipsize="start"
+            android:singleLine="true"/>
+
+    <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lowEmphasis"
+            />
 
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

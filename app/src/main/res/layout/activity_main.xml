@@ -12,7 +12,7 @@
             android:layout_height="match_parent"
             android:name="com.commityourself.gitmobile.fragments.RepositoryListFragment"
             android:id="@+id/repository_list"
-            tools:layout="@layout/repository_list_fragment"/>
+            tools:layout="@layout/fragment_repository_list"/>
 
     <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
